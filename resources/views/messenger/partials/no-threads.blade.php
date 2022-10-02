@@ -1,0 +1,1 @@
+<p class="text-center">You have no messages.</p>
