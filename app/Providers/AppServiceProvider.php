@@ -27,54 +27,54 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $documents   = Document::all();
-        $governances = Governance::all();
-        $governanceQuestions = Question::where('governance', '=', '1')->get();
+        // $documents   = Document::all();
+        // $governances = Governance::all();
+        // $governanceQuestions = Question::where('governance', '=', '1')->get();
 
-        if (Auth::check()) {  
-            $voteResults = array();
+        // if (Auth::check()) {  
+        //     $voteResults = array();
 
-            foreach($questions as $question) {
-                $validVote = Answer::where('question_id',$question->id)->where('user_id',Auth::user()->id)->first();
+        //     foreach($questions as $question) {
+        //         $validVote = Answer::where('question_id',$question->id)->where('user_id',Auth::user()->id)->first();
             
-                if ($validVote) {
-                    $answer = $question;
-                    $total = $answer->tags->sum('count');
+        //         if ($validVote) {
+        //             $answer = $question;
+        //             $total = $answer->tags->sum('count');
 
-                    $percentages = array();
-                    foreach ($answer->tags as $key => $answer) {
-                        if ($answer->count != 0) {
-                            $thispercentage = array(
-                                $answer->name => round(($answer->count/$total)*100, 1)
-                            );
-                            array_push($percentages, $thispercentage);
-                        }
-                        else {
-                            $thispercentage = array(
-                                $answer->name => 0
-                            );
-                            array_push($percentages, $thispercentage);
-                        }
-                    }
-                    array_push($voteResults, $percentages);
-                }
-            }
-            if ($validVote) {
-                $data = array(
-                    'documents'           => $documents,
-                    'governances'         => $governances,
-                    'governanceQuestions' => $governanceQuestions,
-                    'validVote'           => $validVote,
-                );
-            }
-        }
+        //             $percentages = array();
+        //             foreach ($answer->tags as $key => $answer) {
+        //                 if ($answer->count != 0) {
+        //                     $thispercentage = array(
+        //                         $answer->name => round(($answer->count/$total)*100, 1)
+        //                     );
+        //                     array_push($percentages, $thispercentage);
+        //                 }
+        //                 else {
+        //                     $thispercentage = array(
+        //                         $answer->name => 0
+        //                     );
+        //                     array_push($percentages, $thispercentage);
+        //                 }
+        //             }
+        //             array_push($voteResults, $percentages);
+        //         }
+        //     }
+        //     if ($validVote) {
+        //         $data = array(
+        //             'documents'           => $documents,
+        //             'governances'         => $governances,
+        //             'governanceQuestions' => $governanceQuestions,
+        //             'validVote'           => $validVote,
+        //         );
+        //     }
+        // }
 
-        $data = array(
-            'documents'           => $documents,
-            'governances'         => $governances,
-            'governanceQuestions' => $governanceQuestions,
-        );
+        // $data = array(
+        //     'documents'           => $documents,
+        //     'governances'         => $governances,
+        //     'governanceQuestions' => $governanceQuestions,
+        // );
 
-        \View::share('data', $data);
+        // \View::share('data', $data);
     }
 }

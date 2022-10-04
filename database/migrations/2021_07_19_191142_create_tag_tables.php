@@ -19,12 +19,12 @@ class CreateTagTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create('taggables', function (Blueprint $table) {
-            $table->foreignId('tag_id')->constrained()->cascadeOnDelete();
+        // Schema::create('taggables', function (Blueprint $table) {
+        //     $table->foreignId('tag_id')->constrained()->cascadeOnDelete();
 
-            $table->morphs('taggable');
+        //     $table->morphs('taggable');
 
-            $table->unique(['tag_id', 'taggable_id', 'taggable_type']);
-        });
+        //     $table->unique(['tag_id', 'taggable_id', 'taggable_type']);
+        // });
     }
 }

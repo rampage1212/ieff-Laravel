@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.1|^8.0",
+        "cmgmyr/messenger": "^2.27",
         "drobee/nova-sluggable": "^1.2",
         "fideloper/proxy": "^4.4",
         "froala/nova-froala-field": "^3.4",
@@ -17,18 +18,18 @@
         "intervention/image": "^2.5",
         "laravel/framework": "^8.12",
         "laravel/helpers": "^1.4",
-        "laravel/nova": "*",
+        "laravel/nova": "v4.14.3",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "paypal/rest-api-sdk-php": "^1.14",
         "riari/laravel-forum": "~4.0",
         "riari/laravel-forum-frontend": "~1.0",
-        "spatie/laravel-tags": "^3.1",
-        "spatie/nova-tags-field": "^3.2",
+        "spatie/laravel-tags": "^4.0",
+        "spatie/nova-tags-field": "^4.0",
         "tapp/select-country-code": "^1.2",
+        "tightenco/nova-google-analytics": "*",
         "yajra/laravel-disqus": "^1.2",
-        "ynacorp/nova-swatches": "^1.0",
-        "tightenco/nova-google-analytics": "*"
+        "ynacorp/nova-swatches": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
