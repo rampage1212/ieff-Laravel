@@ -376,19 +376,21 @@
 					<div class="container">
 						<h3 class="text-center">IEFF Documents</h3>
 						<hr><br>
-						@foreach (array_chunk($data['documents']->toArray(), 3) as $set) 
-						    <div class="row">
-						        @foreach ($set as $document) 
-						            <div class="col-sm-6 col-md-4">
-						               <li class="text-center" style="list-style: none">
-											<a href="/storage/{{ $document['filename'] }}" target="_blank">
-												<i class="icon-file-pdf"></i> {{ $document['name'] }}
-											</a>
-										</li>
-						            </div>
-						        @endforeach
-						   </div>
-						@endforeach
+						@if(isset($data))
+							@foreach (array_chunk($data['documents']->toArray(), 3) as $set) 
+								<div class="row">
+									@foreach ($set as $document) 
+										<div class="col-sm-6 col-md-4">
+										<li class="text-center" style="list-style: none">
+												<a href="/storage/{{ $document['filename'] }}" target="_blank">
+													<i class="icon-file-pdf"></i> {{ $document['name'] }}
+												</a>
+											</li>
+										</div>
+									@endforeach
+							</div>
+							@endforeach
+						@endif
 					</div>
 				</div>
 
